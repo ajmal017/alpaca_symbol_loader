@@ -76,7 +76,7 @@ def insert_symbols(symbols, conn):
         cur = conn.cursor()
         cur.executemany(final_str, symbols)
 
-def main():
+def main(request):
     db_host=db_secmaster_cred.dbHost 
     db_user=db_secmaster_cred.dbUser
     db_password=db_secmaster_cred.dbPWD
