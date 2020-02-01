@@ -14,8 +14,8 @@ import configparser
 import pandas as pd
 import json
 
-import q_credentials.db_secmaster_cred as db_secmaster_cred
-import q_credentials.alpaca_cred as alpaca_cred
+import alpaca_cred
+import db_secmaster_cred
 
 def get_symbols(conn,exchange_id,data_vendor_id):
     now = datetime.datetime.utcnow()
