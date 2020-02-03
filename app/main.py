@@ -76,7 +76,7 @@ def insert_symbols(symbols, conn):
         cur = conn.cursor()
         cur.executemany(final_str, symbols)
 
-def main(request):
+def loader(request):
     db_host=db_secmaster_cred.dbHost 
     db_user=db_secmaster_cred.dbUser
     db_password=db_secmaster_cred.dbPWD
@@ -106,9 +106,4 @@ def main(request):
 
     symbols = get_symbols(conn,exchange_id,data_vendor_id)
     insert_symbols(symbols, conn)
-    print("%s symbols were successfully added." % len(symbols))  
-
-    
-    
-if __name__ == "__main__":
-    main()   
+    return("%s symbols were successfully added." % len(symbols))
